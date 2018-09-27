@@ -1,0 +1,15 @@
+<% if flash[:error] %>
+  <% flash[:error].each do |e| %>
+    <%= e %>
+  <% end %>
+<% end %>
+
+<%= form_for @subway do |f| %>
+<%= f.label "Letter" %>
+<%= f.text_field :letter %>
+<%= f.label "Color" %>
+<%= f.text_area :color %>
+<%= f.submit "Create Subway" %>
+<% end %>
+
+<%= link_to "Cancel", subways_path %>

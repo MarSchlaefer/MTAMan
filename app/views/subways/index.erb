@@ -1,0 +1,21 @@
+<h1>Subways</h1>
+<ul>
+
+<% @subways.each do |s| %>
+  <li>
+    <div>
+      <%= link_to "Subway", s %>
+      <%= s.letter  %>
+      <%= s.color %> <br>
+    </div>
+
+
+  <% s.delays.each do |d| %>
+    <p>Delay: <%= link_to d.name, d %> </p>
+  <% end %>
+  <br>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create a Bette Alternative :D", new_subway_path %>

@@ -1,0 +1,7 @@
+<h1> Delays </h1>
+<% @delays.each do |s| %>
+  <%= link_to s.name, s %> <br>
+  <%= link_to "Delete", s, method: :delete %><br><br>
+<% end %>
+
+  <%= link_to "Create A Delay!", new_delay_path %>

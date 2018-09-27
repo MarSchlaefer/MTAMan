@@ -1,0 +1,33 @@
+<% if flash[:error] %>
+  <% flash[:error].each do |e| %>
+    <%= e %>
+  <% end %>
+ <% end %>
+
+<%= form_for @delay do |f| %>
+<%= f.label "Name of Delay" %>
+<%= f.text_field :name %>
+<%= f.label "Description" %>
+<%= f.text_area :description %>
+<%= f.label "Subway" %>
+<%= f.collection_select :subway_id, Subway.all, :id, :letter %>
+<%= f.submit "Report" %>
+<% end %>
+
+<%= link_to "Cancel", delays_path %>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Drop down.
+
+form_for @hi do |f|
+  f.text_field :name
+  collection_select :hi, :hello_id, Hello.all, :id, :name -->
